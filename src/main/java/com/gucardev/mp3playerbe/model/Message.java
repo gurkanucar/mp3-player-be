@@ -14,5 +14,6 @@ import lombok.NoArgsConstructor;
 public class Message {
     private String room;
     private Command command;
+    private String value;
 
 }

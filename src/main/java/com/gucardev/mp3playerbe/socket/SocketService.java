@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SocketService {
 
-    private void sendCommand(String room, SocketIOClient senderClient, CommandNameConstants commandName, String commandValue) {
+    public void sendCommand(String room, SocketIOClient senderClient, CommandNameConstants commandName, String commandValue) {
         for (
                 SocketIOClient client : senderClient.getNamespace().getRoomOperations(room).getClients()) {
             if (!client.getSessionId().equals(senderClient.getSessionId())) {
