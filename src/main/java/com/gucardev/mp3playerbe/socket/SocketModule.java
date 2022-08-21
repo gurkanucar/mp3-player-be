@@ -1,6 +1,5 @@
 package com.gucardev.mp3playerbe.socket;
 
-import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.ConnectListener;
 import com.corundumstudio.socketio.listener.DataListener;
@@ -15,9 +14,11 @@ public class SocketModule {
 
 
     private final SocketIOServer server;
+    private final CommandHandlerService commandHandlerService;
 
-    public SocketModule(SocketIOServer server) {
+    public SocketModule(SocketIOServer server, SocketService socketService, CommandHandlerService commandHandlerService) {
         this.server = server;
+        this.commandHandlerService = commandHandlerService;
         server.addConnectListener(onConnected());
         server.addDisconnectListener(onDisconnected());
         server.addEventListener("commands", Message.class, onChatReceived());
@@ -28,7 +29,11 @@ public class SocketModule {
     private DataListener<Message> onChatReceived() {
         return (senderClient, data, ackSender) -> {
             log.info(data.toString());
-            // data.getCommand().execute(data.getRoom(), data.getValue(), senderClient);
+            commandHandlerService.executeCommand(data.getCommandName(),
+                    data.getRoom(),
+                    senderClient,
+                    data.getValue());
+            // data.get().execute(data.getRoom(), data.getValue(), senderClient);
         };
     }
 
