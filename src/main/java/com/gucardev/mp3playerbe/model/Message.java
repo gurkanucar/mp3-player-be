@@ -2,6 +2,7 @@ package com.gucardev.mp3playerbe.model;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.gucardev.mp3playerbe.command.Command;
+import com.gucardev.mp3playerbe.command.CommandNameConstants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 public class Message {
     private String room;
-    private Command command;
+    private CommandNameConstants commandName;
     private String value;
 
 }
