@@ -6,6 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class CommandResponse {
-    private final CommandNameConstants commandName;
+    private final CommandType commandName;
     private final String value;
 }
