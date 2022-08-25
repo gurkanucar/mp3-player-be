@@ -42,7 +42,12 @@ then open the **"ServerCommandLineRunner"** file
 insert musics:
 
         fileService.save(FileModel.builder().name("music name").build());
-## Example Images
+
+## Example Video:
+
+[https://www.youtube.com/watch?v=IfaBerTl_PI](https://www.youtube.com/watch?v=IfaBerTl_PI)
+
+## Example Images:
 
 ![example](./images/ex1.png)
 
@@ -50,10 +55,6 @@ insert musics:
 
 ![example](./images/ex3.png)
 
-
-### Example Video:
-
-[https://www.youtube.com/watch?v=IfaBerTl_PI](https://www.youtube.com/watch?v=IfaBerTl_PI)
 
 ### Frontend:
 
