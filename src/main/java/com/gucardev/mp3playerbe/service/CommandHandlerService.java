@@ -1,4 +1,4 @@
-package com.gucardev.mp3playerbe.socket;
+package com.gucardev.mp3playerbe.service;
 
 import com.corundumstudio.socketio.SocketIOClient;
 import com.gucardev.mp3playerbe.command.Command;

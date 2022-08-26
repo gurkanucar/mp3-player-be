@@ -5,6 +5,7 @@ import com.corundumstudio.socketio.listener.ConnectListener;
 import com.corundumstudio.socketio.listener.DataListener;
 import com.corundumstudio.socketio.listener.DisconnectListener;
 import com.gucardev.mp3playerbe.model.Message;
+import com.gucardev.mp3playerbe.service.CommandHandlerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
